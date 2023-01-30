@@ -1,0 +1,104 @@
+//Multilevel
+#include<iostream>
+using namespace std;
+class arith_op
+{
+
+public:
+    int a = 5;
+    int b = 30;
+
+};
+class add : public arith_op
+{
+
+public:
+    void addtwonum()
+    {
+
+    cout<<a + b;
+    }
+};
+class mul : public add
+{
+
+ public:
+    void multwonum()
+    {
+        cout<<a*b;
+    }
+};
+int main()
+{
+    mul Numbers;
+    cout<<"firstNumber:"<<Numbers.a<<endl;
+    cout<<"secondNumber:"<<Numbers.b<<endl;
+    cout<<"Adding two numbers:";Numbers.addtwonum();
+    cout<<"Multiply two numbers:";Numbers.multwonum();
+
+}
+
+//Hybrid //
+
+
+#include <iostream>
+using namespace std;
+class student
+{
+ public:
+ int id ;
+ char name;
+ void getstudent()
+   {
+    cout<<"Enter student Id,student name";
+    cin>>id>>name;
+    }
+};
+class marks : public student
+{
+    protected:
+     int marks_math,marks_phy,marks_chem;
+     public :
+     void getmarks()
+    {
+     cout<<"Enter 3 subject mark";
+     cin>>marks_math>>marks_phy>>marks_chem;
+    }
+};
+class sports
+{
+ public:
+ int spmarks;
+ void getsports()
+ {
+     cout<<"Enter sports marks";
+     cin>>spmarks;
+ }
+};
+
+ class result : public marks , public sports 
+ {
+    public:
+     int total_marks;
+     float avg_marks;
+    
+    void display()
+    {
+        total_marks = marks_math+marks_phy+marks_chem;
+        avg_marks = total_marks/3.0;
+        cout<<"total marks ="<<total_marks<<endl;
+        cout<<"Average marks ="<<avg_marks<<endl;
+        cout<<"average + sports marks="<<avg_marks+spmarks;
+
+    }
+ };
+ int main()
+ {
+
+    result res;
+    res.getstudent();
+    res.getmarks();
+    res.getsports();
+    res.display();
+    return 0;
+ }
