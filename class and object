@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class book
+{
+    private:
+    int bcode;
+    char title[50];
+    public:
+    void get()
+    {
+cout<<"enter the book code,title of the book";
+cin>>bcode;
+ cin>>title;
+    }
+    void put()
+    {
+cout<<"book code"<<bcode;
+cout<<"book title"<<title;
+    }
+};
+int main()
+{
+    book b;
+    b.get();
+    b.put();
+    return 0;
+} 
