@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class car
+{
+    string model;
+    string brand;
+    public:
+    car(string m,string b)
+    {
+     model = m;
+     brand = b;
+    }
+~car()
+ {
+    cout<<"destuct";
+ }
+ void getbrand()
+ {
+     cout<<"model"<<model<<endl;
+     cout<<"brand"<<brand<<endl;
+ }
+     
+};
+int main()
+{
+    car c[6]={car("chiron","bugatti"),car("veyron_SS","bugatti"),car("zonda","pagani"),car("r34","nissan"),car("venno","lamborghini"),car("LFA","lexus") 
+        };
+    c[0].getbrand();
+    c[1].getbrand();
+    c[2].getbrand();
+    c[3].getbrand();
+    c[4].getbrand();
+    c[5].getbrand();
+}
+
