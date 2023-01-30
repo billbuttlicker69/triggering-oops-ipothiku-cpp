@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class Car
+{
+
+public:
+     void s()
+    {
+        cout<<"In base"<<endl;
+    }
+};
+class Bug : public Car
+{
+
+public :
+    void s()
+    {
+
+        cout<<"In derived"<<endl;
+    }
+} ;
+int main()
+{
+    Bug bug;
+    Car* c = &bug;
+    c->s();
+    return 0;
+    
+    
+}
