@@ -1,3 +1,50 @@
+//multiple 
+#include <iostream>
+using namespace std;
+class student_mark
+{
+    protected:
+    int rollno,mark1,mark2;
+    public:
+    void get()
+    {
+        cout<<"Enter the roll no";
+        cin>>rollno;
+        cout<<"enter the highest marks";
+        cin>>mark1>>mark2;
+    }
+};
+class co_mark
+{
+    protected:
+    int comark;
+    public:
+    void getcm()
+    {
+        cout<<"Enter the marks of co curricular";
+        cin>>comark;
+    }
+};
+class result:public student_mark,public co_mark
+  {
+    int avg_mark,total_mark;
+    public:
+    void display()
+    {
+        total_mark=mark1+mark2+comark;
+        avg_mark=total_mark/3;
+        cout<<"The total mark is:"<<total_mark;
+        cout<<"\n The average mark is:"<<avg_mark;
+    }
+};
+int main()
+{
+    result r;
+    r.get();
+    r.getcm();
+    r.display();
+}
+
 //Multilevel
 #include<iostream>
 using namespace std;
@@ -39,7 +86,6 @@ int main()
 }
 
 //Hybrid //
-
 
 #include <iostream>
 using namespace std;
